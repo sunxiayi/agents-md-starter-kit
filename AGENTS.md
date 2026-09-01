@@ -10,7 +10,9 @@ must make an instruction more accurate, easier to adapt, or safer to follow.
 - `templates/`: starting points grouped by repository type.
 - `bridges/`: deliberately small tool-specific compatibility files.
 - `bin/`: dependency-free template-copy CLI.
+- `action/` and `action.yml`: dependency-free GitHub Action implementation and metadata.
 - `test/`: Node built-in tests for CLI behavior and overwrite safety.
+- `.github/workflows/self-test.yml`: Linux CI coverage for tests and the public Action entrypoint.
 - `CHECKLIST.md`: review checklist shared by every template.
 
 ## Validation

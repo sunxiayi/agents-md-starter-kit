@@ -1,6 +1,6 @@
 {
   "name": "agents-md-starter-kit",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Copy a focused AGENTS.md template into any repository with one command.",
   "type": "module",
   "bin": {
@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "test": "node --test",
-    "check": "node --check bin/agents-md-starter-kit.js && node --test"
+    "check": "node --check bin/agents-md-starter-kit.js && node --check action/index.cjs && node --test"
   },
   "engines": {
     "node": ">=18"

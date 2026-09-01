@@ -1,0 +1,29 @@
+name: Repo Agent Kit AGENTS.md Check
+author: Repo Agent Kit
+description: Score AGENTS.md for commands, architecture, validation, safety, and completion evidence.
+
+inputs:
+  path:
+    description: Repository-relative path to the instruction file.
+    required: false
+    default: AGENTS.md
+  fail_below:
+    description: Fail when the deterministic score is below this number from 0 to 100.
+    required: false
+    default: '45'
+
+outputs:
+  score:
+    description: Deterministic instruction-readiness score from 0 to 100.
+  grade:
+    description: Ready to use, Solid start, Needs context, or Too thin.
+  report_url:
+    description: Browser-private checker for reviewing and improving the file.
+
+runs:
+  using: node24
+  main: action/index.cjs
+
+branding:
+  icon: check-circle
+  color: blue

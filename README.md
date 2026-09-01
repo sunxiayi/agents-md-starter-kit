@@ -47,6 +47,27 @@ Then:
 The root [`AGENTS.md`](AGENTS.md) is a filled example for this repository, not a
 universal template.
 
+## Keep instruction quality checked in CI
+
+Add the public GitHub Action to a workflow after checking out the repository:
+
+```yaml
+- name: Check AGENTS.md readiness
+  uses: sunxiayi/agents-md-starter-kit@v1
+  with:
+    path: AGENTS.md
+    fail_below: '45'
+```
+
+The Action applies the same deterministic 100-point checks as the browser tool,
+adds a Markdown report to the job summary, and exposes `score`, `grade`, and
+`report_url` outputs. It reads only the selected repository-relative file,
+rejects paths outside the workspace, uses no secrets, and makes no network
+request.
+
+Set `fail_below` to `0` for a report-only rollout. The default `45` blocks only
+the `Too thin` grade, allowing teams to improve the file incrementally.
+
 ## Keep one source of truth
 
 Instruction drift starts when `AGENTS.md`, `CLAUDE.md`, Copilot instructions,
