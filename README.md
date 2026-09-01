@@ -28,6 +28,19 @@ The CLI refuses to replace an existing `AGENTS.md` unless you explicitly add
 `--force`. It performs no telemetry or network request after installation. Run
 with `--list` or `--help` to see every option.
 
+Prefer GitHub CLI? Install the companion extension once, then create a file with
+the same bundled templates:
+
+```sh
+gh extension install sunxiayi/gh-agents-md
+gh agents-md init
+```
+
+The [`gh-agents-md`](https://github.com/sunxiayi/gh-agents-md) extension also
+prints repository-prefilled Repo Agent Kit audit and generator links with
+`gh agents-md audit` and `gh agents-md generate`. It does not open a browser or
+send repository data during `init`.
+
 Alternatively, copy the minimal template directly:
 
 ```sh
