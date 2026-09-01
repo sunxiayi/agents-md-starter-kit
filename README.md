@@ -1,8 +1,13 @@
 # AGENTS.md Starter Kit
 
-Copy-ready instruction files for AI coding agents. Start with one maintained
-`AGENTS.md`, replace the bracketed placeholders, and add tool-specific bridge
-files only when your workflow actually needs them.
+Copy-ready AGENTS.md templates, a dependency-free generator, and a GitHub
+Action for Codex, Claude Code, Cursor, GitHub Copilot, Gemini CLI, and Windsurf.
+Start with one maintained `AGENTS.md`, replace the bracketed placeholders, and
+add tool-specific bridge files only when your workflow actually needs them.
+
+[Generate from a GitHub repository](https://repoagentkit.com/github-to-agents-md?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
+· [Check an AGENTS.md file](https://repoagentkit.com/audit?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
+· [Compare AGENTS.md and CLAUDE.md](https://repoagentkit.com/agents-md-vs-claude-md?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
 
 ## Start in 60 seconds
 
@@ -34,6 +39,22 @@ Then:
 2. Replace every `[bracketed placeholder]` with a real command or path.
 3. Run each command once. Remove instructions that are not true.
 4. Ask your coding agent to read the file before its next change.
+
+## Use one source with Codex and Claude Code
+
+Codex uses `AGENTS.md` as repository instructions. Claude Code uses
+`CLAUDE.md`, so this kit includes a small import bridge that keeps
+`AGENTS.md` as the maintained source:
+
+```sh
+cp bridges/CLAUDE.md CLAUDE.md
+```
+
+The bridge contains `@AGENTS.md` plus a short maintenance note. Add
+Claude-specific instructions there only when they cannot live in the shared
+file. See the
+[file-by-file decision guide](https://repoagentkit.com/agents-md-vs-claude-md?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=claude-bridge)
+for shared and separate-file setups.
 
 ## Pick the closest starting point
 
