@@ -9,6 +9,8 @@ must make an instruction more accurate, easier to adapt, or safer to follow.
 
 - `templates/`: starting points grouped by repository type.
 - `bridges/`: deliberately small tool-specific compatibility files.
+- `bin/`: dependency-free template-copy CLI.
+- `test/`: Node built-in tests for CLI behavior and overwrite safety.
 - `CHECKLIST.md`: review checklist shared by every template.
 
 ## Validation
@@ -17,7 +19,7 @@ Run these checks before finishing:
 
 ```sh
 git diff --check
-find . -type f -name '*.md' -print0 | xargs -0 grep -n '\[.*\]' || true
+npm run check
 ```
 
 Bracketed placeholders are expected inside `templates/`; explain any new one in

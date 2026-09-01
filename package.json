@@ -1,0 +1,39 @@
+{
+  "name": "agents-md-starter-kit",
+  "version": "1.1.0",
+  "description": "Copy a focused AGENTS.md template into any repository with one command.",
+  "type": "module",
+  "bin": {
+    "agents-md-starter-kit": "bin/agents-md-starter-kit.js"
+  },
+  "files": [
+    "bin/",
+    "templates/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check bin/agents-md-starter-kit.js && node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "agents-md",
+    "codex",
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "coding-agents"
+  ],
+  "homepage": "https://repoagentkit.com/?utm_source=github-cli&utm_medium=package&utm_campaign=agents-md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunxiayi/agents-md-starter-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sunxiayi/agents-md-starter-kit/issues"
+  },
+  "license": "MIT"
+}

@@ -6,15 +6,34 @@ files only when your workflow actually needs them.
 
 ## Start in 60 seconds
 
-1. Copy [`templates/minimal/AGENTS.md`](templates/minimal/AGENTS.md) to the root
-   of your repository.
-2. Replace every `[bracketed placeholder]` with a real command or path.
-3. Run each command once. Remove instructions that are not true.
-4. Ask your coding agent to read the file before its next change.
+Run the dependency-free CLI from GitHub:
+
+```sh
+npx --yes github:sunxiayi/agents-md-starter-kit
+```
+
+Choose a stack-specific starting point when useful:
+
+```sh
+npx --yes github:sunxiayi/agents-md-starter-kit --template nextjs
+```
+
+The CLI refuses to replace an existing `AGENTS.md` unless you explicitly add
+`--force`. It performs no telemetry or network request after installation. Run
+with `--list` or `--help` to see every option.
+
+Alternatively, copy the minimal template directly:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/sunxiayi/agents-md-starter-kit/main/templates/minimal/AGENTS.md -o AGENTS.md
 ```
+
+Then:
+
+1. Put the selected `AGENTS.md` at the root of your repository.
+2. Replace every `[bracketed placeholder]` with a real command or path.
+3. Run each command once. Remove instructions that are not true.
+4. Ask your coding agent to read the file before its next change.
 
 ## Pick the closest starting point
 
