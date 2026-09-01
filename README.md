@@ -1,9 +1,10 @@
 # AGENTS.md Starter Kit
 
-Copy-ready AGENTS.md templates, a dependency-free generator, and a GitHub
-Action for Codex, Claude Code, Cursor, GitHub Copilot, Gemini CLI, and Windsurf.
-Start with one maintained `AGENTS.md`, replace the bracketed placeholders, and
-add tool-specific bridge files only when your workflow actually needs them.
+Copy-ready AGENTS.md templates, a portable agent skill, a dependency-free
+generator, and a GitHub Action for Codex, Claude Code, Cursor, GitHub Copilot,
+Gemini CLI, and Windsurf. Start with one maintained `AGENTS.md`, replace the
+bracketed placeholders, and add tool-specific bridge files only when your
+workflow actually needs them.
 
 [Generate from a GitHub repository](https://repoagentkit.com/github-to-agents-md?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
 · [Check an AGENTS.md file](https://repoagentkit.com/audit?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
@@ -67,6 +68,21 @@ for shared and separate-file setups.
 
 The root [`AGENTS.md`](AGENTS.md) is a filled example for this repository, not a
 universal template.
+
+## Install the agent skill
+
+Install the evidence-based `create-agentsmd` skill for Codex, Claude Code,
+Cursor, GitHub Copilot, or another Agent Skills-compatible tool:
+
+```sh
+npx skills add sunxiayi/agents-md-starter-kit --skill create-agentsmd
+```
+
+The skill creates, revises, or audits `AGENTS.md` from repository evidence. It
+preserves accurate maintainer rules, verifies commands against manifests and
+CI, handles nested monorepo scope, and avoids guessed or unsafe instructions.
+It is stored at [`skills/create-agentsmd/SKILL.md`](skills/create-agentsmd/SKILL.md)
+and can also be copied directly.
 
 ## Keep instruction quality checked in CI
 
