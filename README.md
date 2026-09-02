@@ -83,7 +83,7 @@ for shared and separate-file setups.
 The root [`AGENTS.md`](AGENTS.md) is a filled example for this repository, not a
 universal template.
 
-## Install the agent skill
+## Install the agent skills
 
 Install the evidence-based `create-agentsmd` skill for Codex, Claude Code,
 Cursor, GitHub Copilot, or another Agent Skills-compatible tool:
@@ -97,6 +97,19 @@ preserves accurate maintainer rules, verifies commands against manifests and
 CI, handles nested monorepo scope, and avoids guessed or unsafe instructions.
 It is stored at [`skills/create-agentsmd/SKILL.md`](skills/create-agentsmd/SKILL.md)
 and can also be copied directly.
+
+Install the companion `scan-agent-instructions` skill to review instruction
+files before a coding agent trusts them:
+
+```sh
+npx skills add sunxiayi/agents-md-starter-kit --skill scan-agent-instructions
+```
+
+It locates the instruction surfaces used by major coding agents, runs the
+immutable v1.1.2 scanner locally, reviews every match in context, and reports
+evidence without executing instruction content or claiming that a clean scan
+proves safety. The source is stored at
+[`skills/scan-agent-instructions/SKILL.md`](skills/scan-agent-instructions/SKILL.md).
 
 ## Keep instruction quality checked in CI
 
@@ -128,7 +141,7 @@ execution before a coding agent reads them. The
 accepts any public GitHub repository. To scan the current checkout locally:
 
 ```sh
-npx --yes github:sunxiayi/repo-agent-instruction-security-scan#v1.1.1 .
+npx --yes github:sunxiayi/repo-agent-instruction-security-scan#v1.1.2 .
 ```
 
 The zero-dependency scanner executes none of the instruction content, makes no
