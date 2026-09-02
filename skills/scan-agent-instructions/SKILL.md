@@ -38,7 +38,7 @@ assume that every product loads the same files or uses the same precedence.
 From the repository root, run the immutable reviewed release:
 
 ```sh
-npx --yes https://github.com/sunxiayi/repo-agent-instruction-security-scan/archive/4e0a03940411c3a6a79f28b5e0c200838884486d.tar.gz .
+npx https://github.com/sunxiayi/repo-agent-instruction-security-scan/archive/4e0a03940411c3a6a79f28b5e0c200838884486d.tar.gz .
 ```
 
 The command exits non-zero when it finds a high-severity review prompt. That
