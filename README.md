@@ -9,6 +9,7 @@ workflow actually needs them.
 [Generate from a GitHub repository](https://repoagentkit.com/github-to-agents-md?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
 · [Check an AGENTS.md file](https://repoagentkit.com/audit?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
 · [Compare AGENTS.md and CLAUDE.md](https://repoagentkit.com/agents-md-vs-claude-md?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
+· [Scan instruction security](https://repoagentkit.com/agent-instruction-security-scanner?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md-security&utm_content=readme-hero)
 
 ## Start in 60 seconds
 
@@ -118,6 +119,24 @@ request.
 Set `fail_below` to `0` for a report-only rollout. The default `45` blocks only
 the `Too thin` grade, allowing teams to improve the file incrementally.
 
+## Scan instructions before an agent trusts them
+
+Review repository instructions for hidden Unicode, download-and-execute chains,
+secret transfer, permission bypasses, destructive commands, and encoded
+execution before a coding agent reads them. The
+[browser security scanner](https://repoagentkit.com/agent-instruction-security-scanner?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md-security&utm_content=security-workflow)
+accepts any public GitHub repository. To scan the current checkout locally:
+
+```sh
+npx --yes github:sunxiayi/repo-agent-instruction-security-scan#v1.1.1 .
+```
+
+The zero-dependency scanner executes none of the instruction content, makes no
+network request during scanning, and collects no telemetry. It emits text,
+JSON, or SARIF 2.1.0 and includes a pre-commit hook and GitHub Action. Findings
+are deterministic review prompts, not proof that a repository is safe or
+malicious.
+
 ## Keep one source of truth
 
 Instruction drift starts when `AGENTS.md`, `CLAUDE.md`, Copilot instructions,
@@ -137,6 +156,7 @@ before adding more files.
 ## Free browser tools
 
 - [Check an AGENTS.md file and compare instruction drift](https://repoagentkit.com/audit?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md)
+- [Scan AGENTS.md, CLAUDE.md, and editor instructions for risky patterns](https://repoagentkit.com/agent-instruction-security-scanner?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md-security&utm_content=free-tools)
 - [Convert CLAUDE.md or editor rules to AGENTS.md](https://repoagentkit.com/instruction-file-converter?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md)
 - [Plan files for Codex, Claude Code, Cursor, Copilot, Gemini CLI, and Windsurf](https://repoagentkit.com/ai-agent-instruction-files?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md)
 - [Generate AGENTS.md from a public GitHub repository](https://repoagentkit.com/github-to-agents-md?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md)
