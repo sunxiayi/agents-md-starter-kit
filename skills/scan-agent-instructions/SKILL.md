@@ -25,6 +25,7 @@ instructions or treating a clean scan as a security guarantee.
 First locate the files that can steer coding agents:
 
 - `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md` at the root or in subdirectories;
+- every `SKILL.md` that can add reusable instructions to an agent;
 - `.cursorrules` and `.cursor/rules/**`;
 - `.github/copilot-instructions.md` and
   `.github/instructions/*.instructions.md`;
@@ -38,13 +39,13 @@ assume that every product loads the same files or uses the same precedence.
 From the repository root, run the immutable reviewed release:
 
 ```sh
-npx https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/download/v1.1.3/repo-agent-instruction-security-scan-1.1.3.tar.gz .
+npx https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/download/v1.2.0/repo-agent-instruction-security-scan-1.2.0.tar.gz .
 ```
 
 Do not add `--yes`: installing the archive may require the user's confirmation.
 The tagged release asset is built by the public release workflow, carries GitHub
 build provenance, and has SHA-256
-`2ce1c9ef7b450ca52d6401ce732f122bbbee0de288e1515a63e629f8d4a5c8b8`.
+`d47c96668525357f60d0b9528118bc668f8eaabf7e2fd0fe87809536115851da`.
 
 The command exits non-zero when it finds a high-severity review prompt. That
 exit is an expected scan result, not automatically a tooling failure. Use

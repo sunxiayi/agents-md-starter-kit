@@ -109,7 +109,8 @@ npx skills add sunxiayi/agents-md-starter-kit --skill scan-agent-instructions
 ```
 
 It locates the instruction surfaces used by major coding agents, runs the
-immutable provenance-backed v1.1.3 scanner locally, reviews every match in
+immutable provenance-backed v1.2.0 scanner locally, including every SKILL.md,
+and reviews every match in
 context, and reports evidence without executing instruction content or claiming
 that a clean scan proves safety. The source is stored at
 [`skills/scan-agent-instructions/SKILL.md`](skills/scan-agent-instructions/SKILL.md).
@@ -144,7 +145,7 @@ execution before a coding agent reads them. The
 accepts any public GitHub repository. To scan the current checkout locally:
 
 ```sh
-npx https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/download/v1.1.3/repo-agent-instruction-security-scan-1.1.3.tar.gz .
+npx https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/download/v1.2.0/repo-agent-instruction-security-scan-1.2.0.tar.gz .
 ```
 
 The zero-dependency scanner executes none of the instruction content, makes no
