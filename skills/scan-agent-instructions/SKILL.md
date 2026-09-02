@@ -38,8 +38,13 @@ assume that every product loads the same files or uses the same precedence.
 From the repository root, run the immutable reviewed release:
 
 ```sh
-npx https://github.com/sunxiayi/repo-agent-instruction-security-scan/archive/4e0a03940411c3a6a79f28b5e0c200838884486d.tar.gz .
+npx https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/download/v1.1.3/repo-agent-instruction-security-scan-1.1.3.tar.gz .
 ```
+
+Do not add `--yes`: installing the archive may require the user's confirmation.
+The tagged release asset is built by the public release workflow, carries GitHub
+build provenance, and has SHA-256
+`2ce1c9ef7b450ca52d6401ce732f122bbbee0de288e1515a63e629f8d4a5c8b8`.
 
 The command exits non-zero when it finds a high-severity review prompt. That
 exit is an expected scan result, not automatically a tooling failure. Use
