@@ -6,7 +6,8 @@ Gemini CLI, and Windsurf. Start with one maintained `AGENTS.md`, replace the
 bracketed placeholders, and add tool-specific bridge files only when your
 workflow actually needs them.
 
-[Generate from a GitHub repository](https://repoagentkit.com/github-to-agents-md?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
+[Audit this starter kit](https://repoagentkit.com/github-repo-audit?repo=sunxiayi%2Fagents-md-starter-kit&utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-self-audit)
+· [Generate from a GitHub repository](https://repoagentkit.com/github-to-agents-md?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
 · [Check an AGENTS.md file](https://repoagentkit.com/audit?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
 · [Compare AGENTS.md and CLAUDE.md](https://repoagentkit.com/agents-md-vs-claude-md?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md&utm_content=readme-hero)
 · [Scan instruction security](https://repoagentkit.com/agent-instruction-security-scanner?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md-security&utm_content=readme-hero)
