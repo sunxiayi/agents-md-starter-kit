@@ -1,0 +1,37 @@
+name: Agent instruction security
+
+on:
+  pull_request:
+    paths:
+      - '**/AGENTS.md'
+      - '**/CLAUDE.md'
+      - '**/GEMINI.md'
+      - '**/.cursorrules'
+      - '**/.cursor/rules/**'
+      - '**/.github/copilot-instructions.md'
+      - '**/.github/instructions/*.instructions.md'
+      - '**/.claude/rules/**'
+      - '**/.windsurf/rules/**'
+  push:
+    branches: [main]
+    paths:
+      - '**/AGENTS.md'
+      - '**/CLAUDE.md'
+      - '**/GEMINI.md'
+      - '**/.cursorrules'
+      - '**/.cursor/rules/**'
+      - '**/.github/copilot-instructions.md'
+      - '**/.github/instructions/*.instructions.md'
+      - '**/.claude/rules/**'
+      - '**/.windsurf/rules/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: sunxiayi/repo-agent-instruction-security-scan@v1
