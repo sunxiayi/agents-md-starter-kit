@@ -108,11 +108,11 @@ files before a coding agent trusts them:
 npx skills add sunxiayi/agents-md-starter-kit --skill scan-agent-instructions
 ```
 
-It locates the instruction surfaces used by major coding agents, runs the
-immutable provenance-backed v1.2.0 scanner locally, including every SKILL.md,
-and reviews every match in
-context, and reports evidence without executing instruction content or claiming
-that a clean scan proves safety. The source is stored at
+It locates the instruction surfaces used by major coding agents, reviews every
+`SKILL.md` and repository instruction file locally, and reports evidence without
+executing instruction content or claiming that a clean scan proves safety. It
+does not download or install a scanner; an already-installed v1.2.0-or-newer CLI
+can supplement the manual review. The source is stored at
 [`skills/scan-agent-instructions/SKILL.md`](skills/scan-agent-instructions/SKILL.md).
 
 ## Keep instruction quality checked in CI
@@ -142,17 +142,28 @@ Review repository instructions for hidden Unicode, download-and-execute chains,
 secret transfer, permission bypasses, destructive commands, and encoded
 execution before a coding agent reads them. The
 [browser security scanner](https://repoagentkit.com/agent-instruction-security-scanner?utm_source=github-starter-kit&utm_medium=repository&utm_campaign=agents-md-security&utm_content=security-workflow)
-accepts any public GitHub repository. To scan the current checkout locally:
+accepts any public GitHub repository. To scan the current checkout locally,
+install through a package manager you already trust:
 
 ```sh
-npx https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/download/v1.2.0/repo-agent-instruction-security-scan-1.2.0.tar.gz .
+# macOS or Linux
+brew install sunxiayi/tap/repo-agent-scan
+
+# Windows PowerShell
+scoop bucket add repoagentkit https://github.com/sunxiayi/scoop-bucket
+scoop install repoagentkit/repo-agent-scan
+
+repo-agent-scan .
 ```
 
 The zero-dependency scanner executes none of the instruction content, makes no
 network request during scanning, and collects no telemetry. It emits text,
 JSON, or SARIF 2.1.0 and includes a pre-commit hook and GitHub Action. Findings
 are deterministic review prompts, not proof that a repository is safe or
-malicious.
+malicious. The provenance-backed
+[v1.2.0 release](https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/tag/v1.2.0)
+has SHA-256
+`d47c96668525357f60d0b9528118bc668f8eaabf7e2fd0fe87809536115851da`.
 
 ## Keep one source of truth
 

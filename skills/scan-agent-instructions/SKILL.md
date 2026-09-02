@@ -34,28 +34,34 @@ First locate the files that can steer coding agents:
 Read enough repository structure to understand where each file applies. Do not
 assume that every product loads the same files or uses the same precedence.
 
-## Run the deterministic scan
+## Review locally without bootstrapping code
 
-From the repository root, run the immutable reviewed release:
+Do not download, install, or execute a scanner as part of this skill. Start by
+enumerating the instruction surface with the repository's available local
+search tools, then read each file directly. With ripgrep, a useful inventory is:
 
 ```sh
-npx https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/download/v1.2.0/repo-agent-instruction-security-scan-1.2.0.tar.gz .
+rg --files --hidden \
+  -g 'AGENTS.md' -g 'CLAUDE.md' -g 'GEMINI.md' -g 'SKILL.md' \
+  -g '.cursorrules' -g '.cursor/rules/**' \
+  -g '.github/copilot-instructions.md' \
+  -g '.github/instructions/*.instructions.md' \
+  -g '.claude/rules/**' -g '.windsurf/rules/**'
 ```
 
-Do not add `--yes`: installing the archive may require the user's confirmation.
-The tagged release asset is built by the public release workflow, carries GitHub
-build provenance, and has SHA-256
-`d47c96668525357f60d0b9528118bc668f8eaabf7e2fd0fe87809536115851da`.
+If `repo-agent-scan` was already installed before this task, it may supplement
+the manual review. First record its version:
 
-The command exits non-zero when it finds a high-severity review prompt. That
-exit is an expected scan result, not automatically a tooling failure. Use
-`--fail-on none` when a report-only run is more appropriate. Use
-`--format json` or `--format sarif --output agent-instructions.sarif` only when
-the requested workflow needs machine-readable output.
+```sh
+repo-agent-scan --version
+repo-agent-scan . --fail-on none
+```
 
-If installing or running the scanner is outside the user's authorization,
-inspect the files manually using the same risk classes instead of expanding
-scope.
+Require v1.2.0 or later for recursive `SKILL.md` discovery. If the command is
+missing or older, do not install or upgrade it automatically; continue the
+manual review and mention the limitation. A high-severity exit is an expected
+scan result, not automatically a tooling failure. Use JSON or SARIF output only
+when the requested workflow needs it.
 
 ## Review every match in context
 

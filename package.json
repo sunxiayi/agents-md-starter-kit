@@ -1,6 +1,6 @@
 {
   "name": "agents-md-starter-kit",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Copy a focused AGENTS.md template into any repository with one command.",
   "type": "module",
   "bin": {
