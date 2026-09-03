@@ -1,5 +1,7 @@
 # AGENTS.md Starter Kit
 
+[![Scan agent instructions](https://repoagentkit.com/api/badge?kind=security)](https://repoagentkit.com/agent-instruction-security-scanner?repo=sunxiayi%2Fagents-md-starter-kit&utm_source=readme-badge)
+
 Copy-ready AGENTS.md templates, a portable agent skill, a dependency-free
 generator, and a GitHub Action for Codex, Claude Code, Cursor, GitHub Copilot,
 Gemini CLI, and Windsurf. Start with one maintained `AGENTS.md`, replace the
